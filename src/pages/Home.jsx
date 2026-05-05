@@ -11,11 +11,11 @@ const Home = () => {
       <div className="relative bg-[#0b0b0b] text-white overflow-hidden min-h-screen flex items-center">
 
      
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-orange-500/20"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-black via-[#1a1a1a] to-orange-500/20"></div>
 
       
-        <div className="absolute top-10 right-[-100px] w-[400px] h-[400px] bg-orange-500/20 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-10 left-[-100px] w-[400px] h-[400px] bg-orange-600/20 blur-[120px] rounded-full"></div>
+        <div className="absolute top-10 -right-25 w-100 h-100 bg-orange-500/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-10 -left-25 w-100 h-100 bg-orange-600/20 blur-[120px] rounded-full"></div>
 
         <div className="relative z-10 pt-24 pb-12 px-8 grid md:grid-cols-2 items-center gap-10 w-full">
 
@@ -38,12 +38,12 @@ const Home = () => {
 
      
           <div className="relative flex justify-center">
-            <div className="absolute w-[300px] h-[300px] bg-orange-500/30 blur-[100px] rounded-full"></div>
-            <div className="relative bg-gradient-to-br from-orange-400 to-orange-600 p-2 rounded-[40px] shrink-0">
+            <div className="absolute w-75 h-75 bg-orange-500/30 blur-[100px] rounded-full"></div>
+            <div className="relative bg-linear-to-br from-orange-400 to-orange-600 p-2 rounded-[40px] shrink-0">
               <img
                 src={mypicture}
                 alt="Justina"
-                className="w-[280px] h-[350px] md:w-[320px] md:h-[400px] object-cover rounded-[30px]"
+                className="w-70 h-87.5 md:w-[320px] md:h-100 object-cover rounded-[30px]"
               />
             </div>
           </div>

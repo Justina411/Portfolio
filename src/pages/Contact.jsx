@@ -39,11 +39,11 @@ const Contact = () => {
     <Navbar/>
     <div className="relative min-h-screen bg-[#0b0b0b] text-white overflow-hidden font-sans py-20 px-6 pt-34 md:px-20">
   
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-orange-500/20 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-linear-to-br from-black via-[#1a1a1a] to-orange-500/20 pointer-events-none"></div>
 
    
-      <div className="absolute top-10 right-[-100px] w-[400px] h-[400px] bg-orange-500/20 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-10 left-[-100px] w-[400px] h-[400px] bg-orange-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute top-10 -right-25 w-100 h-100 bg-orange-500/20 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-10 -left-25 w-100 h-100 bg-orange-600/20 blur-[120px] rounded-full pointer-events-none"></div>
 
 
 
@@ -130,7 +130,7 @@ const Contact = () => {
         </div>
 
        
-        <div className="relative lg:col-span-3 bg-[#121212]/50 backdrop-blur-xl border border-zinc-800/50 rounded-[32px] p-8 md:p-10 shadow-2xl z-10">
+        <div className="relative lg:col-span-3 bg-[#121212]/50 backdrop-blur-xl border border-zinc-800/50 rounded-4xl p-8 md:p-10 shadow-2xl z-10">
           <form onSubmit={onSubmit} className="space-y-5">
             <div className="space-y-2">
                 <label className="text-[10px] font-bold text-zinc-500 uppercase ml-1">Name</label>

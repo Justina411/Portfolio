@@ -38,10 +38,10 @@ const Viewproject = () => {
 
    
         <div className="absolute inset-0 bg-[#0b0b0b]"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-orange-500/20"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-black via-[#1a1a1a] to-orange-500/20"></div>
 
-        <div className="absolute top-10 right-[-100px] w-[400px] h-[400px] bg-orange-500/20 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-10 left-[-100px] w-[400px] h-[400px] bg-orange-600/20 blur-[120px] rounded-full"></div>
+        <div className="absolute top-10 -right-25 w-100 h-100 bg-orange-500/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-10 -left-25 w-100 h-100 bg-orange-600/20 blur-[120px] rounded-full"></div>
 
         <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pt-24 px-6">
 
@@ -53,7 +53,7 @@ const Viewproject = () => {
               rel="noopener noreferrer"
               className="group"
             >
-              <div className="w-[260px] h-[260px] bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 cursor-pointer flex flex-col justify-between">
+              <div className="w-65 h-65 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 cursor-pointer flex flex-col justify-between">
 
                
                 <div className="px-4 pt-4 text-sm text-white/80 font-medium">

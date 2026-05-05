@@ -24,12 +24,12 @@ export default function About() {
         <div className="relative z-10 w-full max-w-5xl flex flex-col md:flex-row items-center gap-10">
 
           {/* Image */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <div className="relative">
               <img
                 src={mypicture}
                 alt="profile"
-                className="w-[260px] h-[330px] object-cover rounded-2xl border border-white/20 shadow-xl"
+                className="w-65 h-82.5 object-cover rounded-2xl border border-white/20 shadow-xl"
               />
 
           

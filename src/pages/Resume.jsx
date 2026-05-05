@@ -10,11 +10,11 @@ const Resume = () => {
       <div className="relative min-h-screen bg-[#0b0b0b] text-white overflow-hidden flex items-center justify-center pb-16 pt-24">
 
       
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a1a1a] to-orange-500/20"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-black via-[#1a1a1a] to-orange-500/20"></div>
 
         
-        <div className="absolute top-10 right-[-100px] w-[400px] h-[400px] bg-orange-500/20 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-10 left-[-100px] w-[400px] h-[400px] bg-orange-600/20 blur-[120px] rounded-full"></div>
+        <div className="absolute top-10 bg-linear-to-br w-100 h-100 bg-orange-500/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-10 -left-25 w-100 h-100 bg-orange-600/20 blur-[120px] rounded-full"></div>
 
       
         <div className="relative z-10 max-w-6xl w-full bg-[#111111]/80 backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden grid md:grid-cols-3">
