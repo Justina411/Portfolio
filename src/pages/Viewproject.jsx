@@ -15,7 +15,7 @@ const projects = [
   {
     name: 'Brownie',
     image: brownie,
-    link: 'https://brownie-amber.vercel.app/'
+    link: 'https://brownie-bag.vercel.app/'
   },
   {
     name: 'Snowell Electric',
