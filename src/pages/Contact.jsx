@@ -1,290 +1,345 @@
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, ArrowUpRight, Loader2 } from "lucide-react";
-import { FaTwitter, FaInstagram, FaTiktok } from "react-icons/fa";
 import Navbar from "../components/Navbar";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [result, setResult] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setIsSubmitting(true);
-    setResult("Sending....");
-
-    const formData = new FormData(event.target);
-
-    // ✅ Replace with your real Web3Forms access key
-    formData.append(
-      "access_key",
-      "YOUR_REAL_WEB3FORMS_ACCESS_KEY"
-    );
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     });
+  };
 
-    const data = await response.json();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    if (data.success) {
-      setResult("Message Sent Successfully!");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
+    const whatsappMessage = `Hello Justina! 👋
 
-    setIsSubmitting(false);
+My name is ${formData.name}.
+
+Email: ${formData.email}
+
+Message:
+${formData.message}`;
+
+    const whatsappURL = `https://wa.me/2348141105863?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(whatsappURL, "_blank");
+  };
+
+  const openWhatsApp = () => {
+    window.open(
+      "https://wa.me/2348141105863?text=Hello%20Justina!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20chat%20with%20you.",
+      "_blank"
+    );
   };
 
   return (
     <>
       <Navbar />
 
-      <div className="relative min-h-screen bg-[#0b0b0b] text-white overflow-hidden font-sans py-20 px-6 pt-34 md:px-20">
+      <main className="relative min-h-screen overflow-hidden bg-[#0b0b0b] text-white">
 
-        <div className="absolute inset-0 bg-linear-to-br from-black via-[#1a1a1a] to-orange-500/20 pointer-events-none"></div>
+        {/* =========================
+            BACKGROUND GLOW
+        ========================= */}
 
-        <div className="absolute top-10 -right-25 w-100 h-100 bg-orange-500/20 blur-[120px] rounded-full pointer-events-none"></div>
-        <div className="absolute bottom-10 -left-25 w-100 h-100 bg-orange-600/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div className="absolute inset-0 bg-linear-to-br from-black via-[#111111] to-orange-500/10"></div>
 
-        <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-0">
-          <h1 className="text-[14rem] md:text-[20rem] font-extrabold opacity-[0.015] tracking-tighter text-white">
-            CONTACT
-          </h1>
-        </div>
+        <div className="absolute -top-20 -right-20 h-100 w-100 rounded-full bg-orange-500/15 blur-[120px]"></div>
 
-        <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <div className="absolute bottom-0 -left-20 h-100 w-100 rounded-full bg-orange-600/10 blur-[120px]"></div>
 
-          {/* LEFT SIDE */}
-          <div className="lg:col-span-2 space-y-8">
+        {/* =========================
+            DECORATIVE LINES
+        ========================= */}
+
+        <div className="absolute top-35 left-0 hidden h-px w-48 rotate-35 bg-linear-to-r from-transparent via-orange-500/60 to-transparent md:block"></div>
+
+        <div className="absolute top-55 right-0 hidden h-px w-52 -rotate-35 bg-linear-to-r from-transparent via-orange-500/60 to-transparent md:block"></div>
+
+        <div className="absolute bottom-30 left-0 hidden h-px w-40 -rotate-25 bg-linear-to-r from-transparent via-orange-500/40 to-transparent md:block"></div>
+
+        {/* =========================
+            MAIN CONTENT
+        ========================= */}
+
+        <section className="relative z-10 mx-auto max-w-7xl px-5 pb-16 pt-32 sm:px-8 md:px-10 lg:pt-40">
+
+          {/* BIG BACKGROUND TITLE */}
+
+          <div className="pointer-events-none absolute left-1/2 top-28 -translate-x-1/2 select-none md:top-32">
+            <h1 className="whitespace-nowrap text-[70px] font-black uppercase tracking-[8px] text-white/[0.035] sm:text-[100px] md:text-[150px] lg:text-[190px]">
+              Contact
+            </h1>
+          </div>
+
+          {/* SMALL CONTACT LABEL */}
+
+          <div className="mb-10 flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-orange-500/30 bg-orange-500/10">
+              <FaEnvelope className="text-sm text-orange-500" />
+            </div>
+
+            <span className="text-sm font-medium tracking-wide text-gray-300">
+              Let's Connect
+            </span>
+          </div>
+
+          {/* GRID */}
+
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+            {/* =========================
+                LEFT SIDE
+            ========================= */}
+
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/80 border border-zinc-800 text-[10px] uppercase tracking-widest mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
-                Contact
-              </div>
 
-              <h2 className="text-5xl md:text-6xl font-bold mb-4 tracking-tight">
-                Get in touch
+              <h2 className="text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+                Get in{" "}
+                <span className="text-orange-500">
+                  touch
+                </span>
               </h2>
 
-              <p className="text-zinc-400 text-sm leading-relaxed max-w-xs">
-                Have questions or ready to transform your business with expert solutions? I'll get back to you within 24 hours.
+              <p className="mt-5 max-w-lg text-sm leading-7 text-gray-400 sm:text-base">
+                Have a project in mind, a question, or just want to
+                say hello? I'd love to hear from you. Feel free to
+                reach out through any of the channels below.
               </p>
-            </div>
 
-            <div className="space-y-3">
+              {/* =========================
+                  CONTACT CARDS
+              ========================= */}
 
-              {/* EMAIL */}
-              <div className="group flex items-center justify-between p-4 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-zinc-800/50 rounded-xl">
-                    <Mail className="w-5 h-5 text-orange-500" />
-                  </div>
+              <div className="mt-10 space-y-4">
 
-                  <div>
-                    <p className="text-[10px] uppercase text-zinc-500 font-bold">
-                      Email us
-                    </p>
+                {/* WHATSAPP */}
 
-                    <a
-                      href="mailto:atujustinairuoma411@gmail.com"
-                      className="text-sm hover:text-orange-400 transition-colors"
-                    >
-                      atujustinairuoma411@gmail.com
-                    </a>
-                  </div>
-                </div>
-
-                <ArrowUpRight className="w-4 h-4 text-zinc-600" />
-              </div>
-
-              {/* PHONE */}
-              <div className="group flex items-center justify-between p-4 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-zinc-800/50 rounded-xl">
-                    <Phone className="w-5 h-5 text-orange-500" />
-                  </div>
-
-                  <div>
-                    <p className="text-[10px] uppercase text-zinc-500 font-bold">
-                      Call us
-                    </p>
-
-                    <p className="text-sm">08141105863</p>
-                  </div>
-                </div>
-
-                <ArrowUpRight className="w-4 h-4 text-zinc-600" />
-              </div>
-
-              {/* LOCATION */}
-              <div className="group flex items-center justify-between p-4 bg-zinc-900/30 border border-zinc-800/50 rounded-2xl">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-zinc-800/50 rounded-xl">
-                    <MapPin className="w-5 h-5 text-orange-500" />
-                  </div>
-
-                  <div>
-                    <p className="text-[10px] uppercase text-zinc-500 font-bold">
-                      Our location
-                    </p>
-
-                    <p className="text-sm text-zinc-400">
-                      Ndiaga Ugwuaji enugu south LGA, Enugu state Nigeria
-                    </p>
-                  </div>
-                </div>
-
-                <ArrowUpRight className="w-4 h-4 text-zinc-600" />
-              </div>
-            </div>
-
-            {/* SOCIALS */}
-            <div className="flex gap-3 pt-2">
-
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3.5 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:bg-orange-500 hover:text-black transition-all"
-              >
-                <FaTwitter className="w-5 h-5" />
-              </a>
-
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3.5 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:bg-orange-500 hover:text-black transition-all"
-              >
-                <FaInstagram className="w-5 h-5" />
-              </a>
-
-              <a
-                href="#"
-                className="p-3.5 bg-zinc-900/50 rounded-xl border border-zinc-800 hover:bg-orange-500 hover:text-black transition-all"
-              >
-                <FaTiktok className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* FORM */}
-          <div className="relative lg:col-span-3 bg-[#121212]/50 backdrop-blur-xl border border-zinc-800/50 rounded-4xl p-8 md:p-10 shadow-2xl z-10">
-
-            <form onSubmit={onSubmit} className="space-y-5">
-
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold text-zinc-500 uppercase ml-1">
-                  Name
-                </label>
-
-                <input
-                  name="name"
-                  type="text"
-                  required
-                  className="w-full bg-zinc-800/20 border border-zinc-800/50 rounded-xl p-4 outline-none focus:border-orange-500/50 transition-colors placeholder:text-zinc-700"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold text-zinc-500 uppercase ml-1">
-                  Email
-                </label>
-
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full bg-zinc-800/20 border border-zinc-800/50 rounded-xl p-4 outline-none focus:border-orange-500/50 transition-colors placeholder:text-zinc-700"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold text-zinc-500 uppercase ml-1">
-                  Message
-                </label>
-
-                <textarea
-                  name="message"
-                  rows="5"
-                  required
-                  className="w-full bg-zinc-800/20 border border-zinc-800/50 rounded-xl p-4 outline-none focus:border-orange-500/50 transition-colors placeholder:text-zinc-700 resize-none"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-white text-black hover:bg-orange-500 hover:text-white disabled:bg-zinc-600 disabled:text-zinc-400 transition-all py-4 rounded-xl font-bold text-sm uppercase tracking-widest mt-4 shadow-lg flex justify-center items-center gap-2"
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Sending...
-                  </>
-                ) : (
-                  "Submit"
-                )}
-              </button>
-
-              {result && (
-                <p
-                  className={`text-center text-sm font-medium mt-6 ${
-                    result.includes("Success")
-                      ? "text-green-500"
-                      : "text-orange-500"
-                  }`}
+                <button
+                  onClick={openWhatsApp}
+                  className="group flex w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-left backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-orange-500/10 hover:shadow-lg hover:shadow-orange-500/10"
                 >
-                  {result}
-                </p>
-              )}
-            </form>
+
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] transition group-hover:border-orange-500/40 group-hover:bg-orange-500/10">
+                    <FaWhatsapp className="text-xl text-orange-500" />
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-white">
+                      WhatsApp Me
+                    </h3>
+
+                    <p className="mt-1 text-sm text-gray-400">
+                      08141105863
+                    </p>
+                  </div>
+
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition group-hover:bg-orange-500 group-hover:text-black">
+                    <FaExternalLinkAlt className="text-xs" />
+                  </div>
+
+                </button>
+
+                {/* CALL */}
+
+                <a
+                  href="tel:+2348141105863"
+                  className="group flex w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-orange-500/10 hover:shadow-lg hover:shadow-orange-500/10"
+                >
+
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] transition group-hover:border-orange-500/40 group-hover:bg-orange-500/10">
+                    <FaPhone className="text-lg text-orange-500" />
+                  </div>
+
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-white">
+                      Call Me
+                    </h3>
+
+                    <p className="mt-1 text-sm text-gray-400">
+                      08141105863
+                    </p>
+                  </div>
+
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition group-hover:bg-orange-500 group-hover:text-black">
+                    <FaExternalLinkAlt className="text-xs" />
+                  </div>
+
+                </a>
+
+                {/* EMAIL */}
+
+                <a
+                  href="mailto:atujustinairuoma411@gmail.com"
+                  className="group flex w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-orange-500/40 hover:bg-orange-500/10 hover:shadow-lg hover:shadow-orange-500/10"
+                >
+
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] transition group-hover:border-orange-500/40 group-hover:bg-orange-500/10">
+                    <FaEnvelope className="text-lg text-orange-500" />
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-white">
+                      Email Me
+                    </h3>
+
+                    <p className="mt-1 truncate text-sm text-gray-400">
+                      atujustinairuoma411@gmail.com
+                    </p>
+                  </div>
+
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 transition group-hover:bg-orange-500 group-hover:text-black">
+                    <FaExternalLinkAlt className="text-xs" />
+                  </div>
+
+                </a>
+
+                {/* LOCATION */}
+
+                <div className="group flex w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur-md transition-all duration-300 hover:border-orange-500/40 hover:bg-orange-500/10">
+
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06]">
+                    <FaMapMarkerAlt className="text-lg text-orange-500" />
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold text-white">
+                      Location
+                    </h3>
+
+                    <p className="mt-1 text-sm text-gray-400">
+                      Enugu, Nigeria
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* =========================
+                RIGHT SIDE FORM
+            ========================= */}
+
+            <div className="relative">
+
+              {/* Glow behind form */}
+
+              <div className="absolute -inset-4 rounded-3xl bg-orange-500/5 blur-2xl"></div>
+
+              <div className="relative rounded-3xl border border-white/10 bg-white/[0.05] p-5 shadow-2xl backdrop-blur-xl sm:p-7 md:p-8">
+
+                <div className="mb-7">
+                  <h2 className="text-2xl font-bold sm:text-3xl">
+                    Send me a{" "}
+                    <span className="text-orange-500">
+                      message
+                    </span>
+                  </h2>
+
+                  <p className="mt-2 text-sm leading-6 text-gray-400">
+                    Fill out the form and I'll get back to you.
+                  </p>
+                </div>
+
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-5"
+                >
+
+                  {/* NAME */}
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-gray-300">
+                      Name
+                    </label>
+
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your name"
+                      required
+                      className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-sm text-white outline-none placeholder:text-gray-600 transition focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                    />
+                  </div>
+
+                  {/* EMAIL */}
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-gray-300">
+                      Email
+                    </label>
+
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="your@email.com"
+                      required
+                      className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-sm text-white outline-none placeholder:text-gray-600 transition focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                    />
+                  </div>
+
+                  {/* MESSAGE */}
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium text-gray-300">
+                      Message
+                    </label>
+
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell me about your project..."
+                      required
+                      rows="6"
+                      className="w-full resize-none rounded-xl border border-white/10 bg-black/30 px-4 py-3.5 text-sm text-white outline-none placeholder:text-gray-600 transition focus:border-orange-500 focus:ring-1 focus:ring-orange-500"
+                    ></textarea>
+                  </div>
+
+                  {/* SUBMIT */}
+
+                  <button
+                    type="submit"
+                    className="group flex w-full items-center justify-center gap-3 rounded-xl bg-white px-5 py-4 font-semibold text-black transition-all duration-300 hover:bg-orange-500 hover:shadow-lg hover:shadow-orange-500/20"
+                  >
+                    Send via WhatsApp
+
+                    <FaWhatsapp className="text-lg transition-transform duration-300 group-hover:scale-110" />
+                  </button>
+
+                </form>
+
+              </div>
+
+            </div>
+
           </div>
-        </div>
 
-        {/* SCROLL TEXT */}
-        <div className="fixed bottom-0 left-0 w-full bg-black/40 border-t border-white/10 h-12 overflow-hidden flex items-center z-50">
-          <div className="flex gap-16 whitespace-nowrap text-gray-300 animate-scroll">
+        </section>
 
-            {[
-              "Website Design",
-              "App design",
-              "Website management",
-              "Wireframe",
-              "UI/UX design",
-            ].map((text, i) => (
-              <span key={i}>{text}</span>
-            ))}
-
-            {[
-              "Website Design",
-              "App design",
-              "Website management",
-              "Wireframe",
-              "UI/UX design",
-            ].map((text, i) => (
-              <span key={i}>{text}</span>
-            ))}
-
-          </div>
-
-          <style>
-            {`
-              @keyframes scroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-              }
-
-              .animate-scroll {
-                animation: scroll 25s linear infinite;
-              }
-            `}
-          </style>
-        </div>
-      </div>
+      </main>
     </>
   );
 };

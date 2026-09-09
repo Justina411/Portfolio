@@ -5,6 +5,10 @@ import delish from '../../public/delish_haven.png'
 import brownie from '../../public/Brownie.png'
 import snowell from '../../public/snowell_electric.png'
 import trustmed from '../../public/Trustmed.png'
+import pawfectframe from '../../public/pawfectcare_frame.png'
+import brightpathframe from '../../public/Brightpath frame.png'
+import securehomeframe from '../../public/securehomeframe.png'
+import appdesign from '../../public/Appdesign.png'
 
 const projects = [
   {
@@ -26,6 +30,26 @@ const projects = [
     name: 'Trustmed',
     image: trustmed,
     link: 'https://www.figma.com/proto/Piw3jVG2paalP73mVsX0L5/Team-C?node-id=63-567&viewport=324%2C148%2C0.11&t=qYQUQ2nUUYMO13qS-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=445%3A1756&show-proto-sidebar=1&page-id=0%3A1'
+  },
+  {
+    name: 'Pawfect care',
+    image: pawfectframe,
+    link: 'https://www.figma.com/proto/dcwjZpGaKswfXIDGlNtiUk/Pawfect-Care?page-id=0%3A1&node-id=4-77&scaling=contain&content-scaling=fixed&t=Xw4cHJHOPF4nSjgo-1'
+  },
+  {
+    name: 'Brightpath Academy',
+    image: brightpathframe,
+    link: 'https://www.figma.com/proto/i143kxiCc8EQW4jb4cJxoF/Bright-Path-Academy?page-id=0%3A1&node-id=2139-361&p=f&viewport=804%2C-194%2C0.02&t=l41ReinLuY9sag3u-1&scaling=contain&content-scaling=fixed'
+  },
+  {
+    name: 'Secure Home',
+    image: securehomeframe,
+    link: 'https://www.figma.com/proto/HmTjP8pWGqhrmJ7WezLx90/ESTATE-APP?node-id=547-889&viewport=3693%2C-45%2C0.08&t=7ucF4SEvReNJuKBN-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=11%3A2&show-proto-sidebar=1&page-id=0%3A1'
+  },
+  {
+    name: 'App design',
+    image: appdesign,
+    link: 'https://www.figma.com/proto/GfOEWwOA9gL8eybQflXq2y/Apps?node-id=10-333&viewport=238%2C276%2C0.06&t=9NnxGqdWkU2nK0Pb-1&scaling=contain&content-scaling=fixed&page-id=0%3A1'
   }
 ]
 

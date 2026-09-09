@@ -6,7 +6,7 @@ export default function About() {
     <>
       <Navbar />
 
-      <section className="relative w-full min-h-screen flex items-start justify-center bg-[#0b0b0b] text-white overflow-hidden px-6 pt-35">
+      <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-[#0b0b0b] text-white overflow-hidden px-6 pt-10">
 
       
         <div className="absolute inset-0">
@@ -21,10 +21,10 @@ export default function About() {
         <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Content */}
-        <div className="relative z-10 w-full max-w-5xl flex flex-col md:flex-row items-center gap-10">
+        <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
 
           {/* Image */}
-          <div className="shrink-0">
+          <div className="shrink-0 mx-auto md:mx-0">
             <div className="relative">
               <img
                 src={mypicture}
@@ -47,13 +47,14 @@ export default function About() {
             <p className="text-gray-200 text-sm leading-relaxed mb-4">
               I am a passionate software engineer and UI/UX designer who enjoys creating
               modern, user-friendly digital experiences. I combine design thinking
-              with frontend development to build interfaces that are both visually
-              appealing and highly functional.
+              with full-stack development  frontend and backend  to build applications
+              that are both visually appealing and highly functional.
             </p>
 
             <p className="text-gray-200 text-sm leading-relaxed mb-6">
               My focus is on understanding user needs, designing intuitive layouts,
-              and bringing them to life using clean and efficient code.
+              building solid backend systems, and bringing it all to life using clean
+              and efficient code.
             </p>
 
           
@@ -63,7 +64,7 @@ export default function About() {
               </h3>
 
               <div className="flex flex-nowrap gap-3 overflow-x-auto scrollbar-hide">
-                {["UI/UX Design", "HTML", "CSS", "JavaScript", "React", "Tailwind"].map((skill, i) => (
+                {["UI/UX Design", "HTML", "CSS", "JavaScript", "React", "Tailwind", "Node.js", "Express", "MongoDB"].map((skill, i) => (
                   <span
                     key={i}
                     className="px-4 py-2 text-xs whitespace-nowrap rounded-full bg-white/10 border border-white/20 backdrop-blur-md"
@@ -83,6 +84,7 @@ export default function About() {
             {[
               "Website Design",
               "App design",
+              "Backend Development",
               "Website management",
               "Wireframe",
               "UI/UX design",
@@ -93,6 +95,7 @@ export default function About() {
             {[
               "Website Design",
               "App design",
+              "Backend Development",
               "Website management",
               "Wireframe",
               "UI/UX design",

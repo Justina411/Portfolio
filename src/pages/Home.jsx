@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Link } from 'react-router-dom' 
 import Navbar from '../components/Navbar'
@@ -22,11 +23,15 @@ const Home = () => {
       
           <div>
             <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              Hi, I’m <span className="text-orange-500">Justina</span>
+              Hi, I'm <span className="text-orange-500">Justina</span>
             </h1>
 
+            <p className="mt-3 text-orange-400 text-lg font-medium">
+              Software Engineer · Frontend & Backend · UI/UX
+            </p>
+
             <p className="mt-6 text-gray-300 text-lg">
-              Frontend Developer crafting modern, responsive and visually appealing web experiences.
+              Software Engineer specializing in Frontend & Backend development, App design, and UI/UX  building modern, responsive, and visually engaging digital experiences.
             </p>
 
             <Link to="/portfolio">
@@ -62,6 +67,7 @@ const Home = () => {
         >
           <span className="text-sm font-medium text-black">Website Design</span>
           <span className="text-sm font-medium text-black">App design</span>
+          <span className="text-sm font-medium text-black">Backend Development</span>
           <span className="text-sm font-medium text-black">Website management</span>
           <span className="text-sm font-medium text-black">Wireframe</span>
           <span className="text-sm font-medium text-black">UI/UX design</span>
@@ -69,6 +75,7 @@ const Home = () => {
          
           <span className="text-sm font-medium text-black">Website Design</span>
           <span className="text-sm font-medium text-black">App design</span>
+          <span className="text-sm font-medium text-black">Backend Development</span>
           <span className="text-sm font-medium text-black">Website management</span>
           <span className="text-sm font-medium text-black">Wireframe</span>
           <span className="text-sm font-medium text-black">UI/UX design</span>

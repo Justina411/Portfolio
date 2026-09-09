@@ -33,14 +33,14 @@ const Resume = () => {
             <div>
               <h2 className="text-lg font-bold mb-2 text-orange-500">PROFILE</h2>
               <p className="text-sm text-gray-300">
-                Passionate frontend developer focused on building responsive and user-friendly web applications.
+                Passionate software engineer focused on building responsive, user-friendly web applications across the full stack, with a strong eye for UI/UX design.
               </p>
             </div>
 
             <div>
               <h2 className="text-lg font-bold mb-3 text-orange-500">SKILLS</h2>
               <div className="space-y-3">
-                {["HTML/CSS", "JavaScript", "React", "UI/UX"].map((skill, i) => (
+                {["HTML/CSS", "JavaScript", "React", "Node.js / Express", "MongoDB", "UI/UX"].map((skill, i) => (
                   <div key={i}>
                     <p className="text-sm">{skill}</p>
                     <div className="w-full bg-[#2a2a2a] rounded-full h-2">
@@ -60,7 +60,7 @@ const Resume = () => {
               <h1 className="text-3xl font-bold">
                 JUSTINA <span className="text-orange-500">DEV</span>
               </h1>
-              <p className="text-gray-400">Frontend Developer</p>
+              <p className="text-gray-400">Software Engineer</p>
             </div>
 
             <div>
@@ -68,11 +68,12 @@ const Resume = () => {
 
               <div className="space-y-6">
                 <div className="border-l-2 border-orange-500 pl-4">
-                  <h3 className="font-bold">Frontend Developer</h3>
+                  <h3 className="font-bold">Software Engineer</h3>
                   <p className="text-sm text-gray-400">2025 - Present</p>
                   <ul className="list-disc ml-5 text-sm text-gray-300">
-                    <li>Built responsive web apps using React</li>
-                    <li>Improved UI/UX design</li>
+                    <li>Built responsive web apps using React on the frontend and Node.js/Express on the backend</li>
+                    <li>Designed and implemented UI/UX for web and app interfaces</li>
+                    <li>Worked with MongoDB for data storage and API development</li>
                   </ul>
                 </div>
 
@@ -80,7 +81,7 @@ const Resume = () => {
                   <h3 className="font-bold">Intern Developer</h3>
                   <p className="text-sm text-gray-400">2025 - 2026</p>
                   <ul className="list-disc ml-5 text-sm text-gray-300">
-                    <li>Worked with HTML, CSS, JavaScript</li>
+                    <li>Worked with HTML, CSS, JavaScript, React, Django, node js, Express js, Mongo db</li>
                     <li>Collaborated with team members</li>
                   </ul>
                 </div>
@@ -103,6 +104,7 @@ const Resume = () => {
             {[
               "Website Design",
               "App design",
+              "Backend Development",
               "Website management",
               "Wireframe",
               "UI/UX design",
@@ -113,6 +115,7 @@ const Resume = () => {
             {[
               "Website Design",
               "App design",
+              "Backend Development",
               "Website management",
               "Wireframe",
               "UI/UX design",

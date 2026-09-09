@@ -79,12 +79,12 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                {/* Text */}
+               
                 <p className="text-xs text-gray-200 mb-3">
                   {item.text}
                 </p>
 
-                {/* Name */}
+               
                 <p className="font-semibold text-sm text-white mb-4">
                   - {item.name}
                 </p>
