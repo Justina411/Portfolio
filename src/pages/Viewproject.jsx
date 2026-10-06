@@ -44,12 +44,12 @@ const projects = [
   {
     name: 'Secure Home',
     image: securehomeframe,
-    link: 'https://www.figma.com/proto/HmTjP8pWGqhrmJ7WezLx90/ESTATE-APP?node-id=547-889&viewport=3693%2C-45%2C0.08&t=7ucF4SEvReNJuKBN-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=11%3A2&show-proto-sidebar=1&page-id=0%3A1'
+    link: 'https://www.figma.com/proto/HmTjP8pWGqhrmJ7WezLx90/ESTATE-APP?node-id=11-2&t=Lg5YbVWWnIZQLFz8-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=11%3A2&show-proto-sidebar=1'
   },
   {
-    name: 'App design',
+    name: 'Pennypal',
     image: appdesign,
-    link: 'https://www.figma.com/proto/GfOEWwOA9gL8eybQflXq2y/Apps?node-id=10-333&viewport=238%2C276%2C0.06&t=9NnxGqdWkU2nK0Pb-1&scaling=contain&content-scaling=fixed&page-id=0%3A1'
+    link: 'https://www.figma.com/proto/Z28wxGlCmVGC6WtwR4318J/Pennypal-App?node-id=290-427&t=TbVgiWkdy4oQ1wyp-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=290%3A402'
   }
 ]
 
