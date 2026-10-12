@@ -55,12 +55,12 @@ const projects = [
   {
     name: 'Beauty shop',
     image: beautyshop,
-    link: 'beauty-shop-two-black.vercel.app'
+    link: 'https://beauty-shop-two-black.vercel.app'
   },
   {
     name: 'pennypal',
     image: beautyshop,
-    link: 'c:/Users/user/Downloads/pennypal-app'
+    link: 'https://c:/Users/user/Downloads/pennypal-app'
   }
 ]
 
