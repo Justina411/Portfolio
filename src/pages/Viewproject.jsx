@@ -9,6 +9,7 @@ import pawfectframe from '../../public/pawfectcare_frame.png'
 import brightpathframe from '../../public/Brightpath frame.png'
 import securehomeframe from '../../public/securehomeframe.png'
 import appdesign from '../../public/Appdesign.png'
+import beautyshop from '../../public/beautyshop.jpg'
 
 const projects = [
   {
@@ -50,6 +51,16 @@ const projects = [
     name: 'Pennypal',
     image: appdesign,
     link: 'https://www.figma.com/proto/Z28wxGlCmVGC6WtwR4318J/Pennypal-App?node-id=290-427&t=TbVgiWkdy4oQ1wyp-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=290%3A402'
+  },
+  {
+    name: 'Beauty shop',
+    image: beautyshop,
+    link: 'beauty-shop-two-black.vercel.app'
+  },
+  {
+    name: 'pennypal',
+    image: beautyshop,
+    link: 'c:/Users/user/Downloads/pennypal-app'
   }
 ]
 
